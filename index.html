@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUAMA · Café &amp; Sabores</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Lora:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="#inicio">
+            <img class="header__logo" src="img/logo.png" alt="HUAMA Cafe y Sabores">
+        </a>
+        <nav class="nav">
+            <a href="#hornero">El hornero</a>
+            <a href="#carta">Carta</a>
+            <a href="#para-llevar">Para llevar</a>
+            <a href="#pedidos">Pedidos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero__text">
+                <p class="hero__etiqueta">Cafe de especialidad · Tucumán</p>
+                <h1 class="hero__titulo">Buen cafe, mejores momentos</h1>
+                <p class="hero__descripcion">Café de especialidad y panadería artesanal con raíz tucumana. Una marca cálida, hecha a mano y cercana.</p>
+                <a class="boton" href="#carta">Ver la carta</a>
+            </div>
+            <img class="hero__imagen" src="img/hero.png" alt="Vaso de café, bolsa y medialuna de HUAMA sobre una mesa de madera">
+        </section>
+        
+        <section class="hornero" id="hornero">
+            <div class="contenedor hornero__contenido">
+                <img class="hornero__imagen" src="img/hornero.png" alt="Ilustracion de un hornero sobre su nido de barro">
+                <div class="hornero__text">
+                    <p class="hornero__etiqueta">Nuestra mascota</p>
+                    <h2 class="hornero__titulo">El Hornero</h2>
+                    <p>Un pequeño gran constructor. Símbolo de trabajo, hogar y nuevos comienzos: arma su nido de barro como nosotros armamos cada taza y cada horneada.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="carta" id="carta">
+            <div class="contenedor">
+                <p class="carta__etiqueta">- Nuestra carta -</p>
+
+                <div class="carta__grilla">
+
+                    <div class="carta__categoria">
+                        <h2 class="carta__titulo">Cafe</h2>
+                        <p class="carta__subtitulo">para arrancar temprano</p>
+                        <ul class="carta__lista">
+                            <li class="carta__item">
+                                <span>Espresso</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$2.500</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Cortado</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$2.800</span>
+                            </li>
+                            <li class="carta__item carta__item--destacado">
+                                <span>Capuccino</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$5.000</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Jarrita</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$3.500</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Cafe con leche</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$4.500</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Submarino</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$5.000</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="carta__categoria">
+                        <h2 class="carta__titulo">Del horno</h2>
+                        <p class="carta__subtitulo">Panaderia artesanal del dia</p>
+                        <ul class="carta__lista">
+                            <li class="carta__item">
+                                <span>Medialuna</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$1.500</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Tortilla</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$1.500</span>
+                            </li>
+                            <li class="carta__item carta__item--destacado">
+                                <span>Medialuna Italiana</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$2.000</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Roll decanela</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$3.000</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Cookie</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$3.000</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Crumble</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$3.500</span>
+                            </li>
+                            <li class="carta__item">
+                                <span>Galleta rellena</span>
+                                <span class="carta__puntos" aria-hidden="true"></span>
+                                <span class="carta__precio">$3.000</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="para-llevar" id="para-llevar">
+            <div class="contenedor">
+                <p class="seccion__etiqueta">Packaging</p>
+                <h2 class="seccion__titulo">Para llevar</h2>
+
+                <div class="galeria">
+                    <figure class="galeria__item">
+                        <img src="img/caja-frente.png" alt="Caja kraft de HUAMA cerrada">
+                        <figcaption>Caja · frente</figcaption>
+                    </figure>
+                    <figure class="galeria__item">
+                        <img src="img/hero.png" alt="Vaso de cafe y bolsa de kraft de HUAMA">
+                        <figcaption>Vaso 8 oz</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="pedidos" id="pedidos">
+            <div class="contenedor pedidos__contenido">
+                <p class="seccion__etiqueta">Tu cafe, donde estes</p>
+                <h2 class="pedidos__titulo">Pedidos por delivery</h2>
+                <p>Hacemos envios en Yerba Buena</p>
+                <p class="pedidos__horario">Lunes a sábado · 8 a 13 hs</p>
+                <a class="boton boton--claro" href="https://wa.me/549381XXXXXXX" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+                <p class="pedidos__ig">Seguinos en <a href="https://instagram.com/huama.cafe" target="_blank" rel="noopener">@huama.cafe</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contenedor footer__contenido">
+            <p class="footer__marca">HUAMA · Café &amp; Sabores</p>
+            <p class="footer__frase">Buen café, mejores momentos.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

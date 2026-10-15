@@ -1,0 +1,371 @@
+:root{
+    --verde-oliva: #59604a;
+    --terracota: #a65f43;
+    --arena: #E7D8C0;
+    --cafe-oscuro: #34271f;
+    --crema: #F5EBDD;
+}
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Lora',serif;
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+    line-height: 1.6;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__logo{
+    height: 64px;
+}
+
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.nav a{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cafe-oscuro);
+}
+
+.nav a:hover {
+    color: var(--terracota)
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.hero__etiqueta{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracota);
+}
+
+.hero__titulo{
+    font-family: 'Caveat',cursive;
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--terracota);
+    margin: 0.5rem 0 1rem;
+}
+
+.hero__descripcion{
+    max-width: 45ch;
+    margin-bottom: 1.5rem;
+}
+
+.hero__imagen{
+    border-radius: 12px;
+}
+
+.boton{
+    display: inline-block;
+    background: var(--verde-oliva);
+    color: var(--crema);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    transition: background 0.2s;
+}
+
+.boton:hover{
+    background: var(--cafe-oscuro);
+}
+
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hornero{
+    background: var(--verde-oliva);
+    color: var(--crema);
+    padding: 4rem 0;
+}
+
+.hornero__contenido{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hornero__imagen{
+    border-radius: 12px;
+}
+
+.hornero__etiqueta{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--arena);
+}
+
+.hornero__titulo{
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0.5rem 0 1rem;
+}
+
+.hornero__texto p {
+    max-width: 50ch;
+}
+
+.carta{
+    padding: 4rem 0
+}
+
+.carta__etiqueta{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 3rem;
+}
+
+.carta__grilla{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem 5rem;
+}
+
+.carta__titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.carta__subtitulo{
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--terracota);
+    margin-bottom: 1.5rem;
+}
+
+.carta__lista{
+    list-style: none;
+}
+
+.carta__item{
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    font-size: 1.1rem;
+}
+
+.carta__puntos{
+    flex: 1;
+    border-bottom: 1px dotted var(--cafe-oscuro);
+    opacity: 0.4;
+}
+
+.carta__precio{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.carta__item--destacado span:first-child::after{
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 0.4rem;
+    border-radius: 50%;
+    background: var(--terracota);
+    vertical-align: middle;
+}
+
+.para-llevar{
+    padding: 4rem 0;
+}
+
+.seccion__etiqueta{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracota);
+}
+
+.seccion__titulo{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.galeria__item{
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.galeria__item img{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.galeria__item:hover img{
+    transform: scale(1.05);
+}
+
+.galeria__item figcaption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1rem 0.8ren;
+    background: linear-gradient(transparent, rgba(52,39,31,0.85));
+    color: var(--crema);
+    font-family: 'Montserrat',sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.pedidos{
+    background: var(--terracota);
+    color: var(--crema);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.pedidos .seccion__etiqueta{
+    color: var(--arena);
+}
+
+.pedidos__titulo{
+    font-family: 'Caveat', cursive;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0.5rem 0 1rem;
+}
+
+.pedidos__horario{
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 700;
+    margin: 0.5rem 0 2rem;
+}
+
+.pedidos__ig{
+    margin-top: 1.5rem;
+}
+
+.pedidos__ig a{
+    color: var(--crema);
+}
+
+.boton--claro{
+    background: var(--crema);
+    color: var(--cafe-oscuro);
+}
+
+.footer{
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: 2rem 0;
+}
+
+.footer__contenido{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__marca{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.footer__frase{
+    font-family: 'Caveat',cursive;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 800px){
+    .hero{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero__texto{
+        flex: 1;
+    }
+
+    .hero__imagen{
+        width: 55%;
+    }
+
+    .hornero__contenido{
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .hornero__imagen{
+        width: 35%;
+    }
+
+    .hornero__texto{
+        flex: 1;
+    }
+}
