@@ -1,94 +1,54 @@
-:root{
-    --verde-oliva: #59604a;
-    --terracota: #a65f43;
+/* =========================================
+   HUAMA · Café & Sabores — estilos
+   ========================================= */
+
+/* ---------- Variables de marca ---------- */
+:root {
+    --verde-oliva: #59604A;
+    --terracota: #A65F43;
     --arena: #E7D8C0;
-    --cafe-oscuro: #34271f;
+    --cafe-oscuro: #34271F;
     --crema: #F5EBDD;
 }
 
-*{
-    box-sizing:border-box;
+/* ---------- Reset y base ---------- */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
-    font-family: 'Lora',serif;
+body {
+    font-family: 'Lora', serif;
     background: var(--crema);
     color: var(--cafe-oscuro);
     line-height: 1.6;
 }
 
-img{
+img {
     max-width: 100%;
     display: block;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
+.contenedor {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-.header__logo{
-    height: 64px;
+.franja {
+    height: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--verde-oliva) 0 50px,
+        var(--terracota) 50px 100px,
+        var(--arena) 100px 150px,
+        var(--cafe-oscuro) 150px 200px
+    );
 }
 
-.nav a{
-    font-family: 'Montserrat',sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--cafe-oscuro);
-    padding: 0.9rem 0;
-    border-bottom: 1px solid rgba(245, 235, 221, 0.2);
-}
-
-.nav a:hover {
-    color: var(--terracota)
-}
-
-.hero{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-}
-
-.hero__etiqueta{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--terracota);
-}
-
-.hero__titulo{
-    font-family: 'Caveat',cursive;
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--terracota);
-    margin: 0.5rem 0 1rem;
-}
-
-.hero__descripcion{
-    max-width: 45ch;
-    margin-bottom: 1.5rem;
-}
-
-.hero__imagen{
-    border-radius: 12px;
-}
-
-.boton{
+/* ---------- Botones ---------- */
+.boton {
     display: inline-block;
     background: var(--verde-oliva);
     color: var(--crema);
@@ -98,37 +58,181 @@ img{
     text-transform: uppercase;
     text-decoration: none;
     padding: 0.9rem 1.6rem;
+    border: none;
     border-radius: 999px;
+    cursor: pointer;
     transition: background 0.2s;
 }
 
-.boton:hover{
+.boton:hover {
     background: var(--cafe-oscuro);
 }
 
-.contenedor{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+.boton--claro {
+    background: var(--crema);
+    color: var(--cafe-oscuro);
 }
 
-.hornero{
+/* ---------- Etiquetas y títulos de sección ---------- */
+.seccion__etiqueta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracota);
+}
+
+.seccion__titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+/* ---------- Header ---------- */
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__logo {
+    height: 64px;
+}
+
+/* Botón hamburguesa (solo celular) */
+.menu-boton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: var(--verde-oliva);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 30;
+}
+
+.menu-boton span {
+    width: 20px;
+    height: 2px;
+    background: var(--crema);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-boton[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-boton[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-boton[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menú: en celular es un panel lateral */
+.nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    max-width: 300px;
+    z-index: 20;
+    padding: 6rem 2rem 2rem;
+    background: var(--verde-oliva);
+    box-shadow: -10px 0 30px rgba(52, 39, 31, 0.3);
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+}
+
+.nav--abierta {
+    transform: translateX(0);
+}
+
+.nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--crema);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(245, 235, 221, 0.2);
+}
+
+.nav a:hover {
+    color: var(--arena);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.hero__etiqueta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracota);
+}
+
+.hero__titulo {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--terracota);
+    margin: 0.5rem 0 1rem;
+}
+
+.hero__descripcion {
+    max-width: 45ch;
+    margin-bottom: 1.5rem;
+}
+
+.hero__imagen {
+    border-radius: 12px;
+}
+
+/* ---------- Sobre nosotros (hornero) ---------- */
+.hornero {
     background: var(--verde-oliva);
     color: var(--crema);
     padding: 4rem 0;
 }
 
-.hornero__contenido{
+.hornero__contenido {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.hornero__imagen{
+.hornero__imagen {
     border-radius: 12px;
 }
 
-.hornero__etiqueta{
+.hornero__etiqueta {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 0.2em;
@@ -136,7 +240,7 @@ img{
     color: var(--arena);
 }
 
-.hornero__titulo{
+.hornero__titulo {
     font-family: 'Caveat', cursive;
     font-size: clamp(2.2rem, 7vw, 3rem);
     font-weight: 500;
@@ -148,260 +252,12 @@ img{
     max-width: 50ch;
 }
 
-.carta{
-    background: var(--arena);
-    padding: 5rem 0;
-}
-
-.carta__hoja{
-    max-width: 950px;
-    margin: 0 auto;
-    background: var(--crema);
-    padding: 2.5rem 1.25rem;
-    border-radius: 4px;
-    outline: 1px solid rgba(52,39,31,0.3);
-    outline-offset: -12px;
-    box-shadow: 0 12px 30px rgba(52, 39, 31, 0.15);
-}
-
-.carta__pie{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px dotted rgba(52, 39, 31, 0.4);
-}
-
-.carta__leyenda{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-}
-
-.carta__leyenda::before{
-    content: "";
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin-right: 0.5rem;
-    border-radius: 50%;
-    background: var(--terracota);
-    vertical-align: middle;
-}
-
-.carta__frase{
-    font-family: 'Caveat', cursive;
-    font-size: 1.7rem;
-    color: var(--terracota);
-}
-
-.franja{
-    height: 10px;
-    background: repeating-linear-gradient(
-        90deg,
-        var(--verde-oliva) 0 50px,
-        var(--terracota) 50px 100px,
-        var(--arena) 100px 150px,
-        var(--cafe-oscuro) 150px 200px
-    );
-}
-
-.carta__etiqueta{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--terracota);
-    margin-bottom: 3rem;
-}
-
-.carta__grilla{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-    gap: 3rem 5rem;
-}
-
-.carta__titulo{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.carta__subtitulo{
-    font-family: 'Caveat', cursive;
-    font-size: 1.6rem;
-    color: var(--terracota);
-    margin-bottom: 1.5rem;
-}
-
-.carta__lista{
-    list-style: none;
-}
-
-.carta__item{
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    padding: 0.6rem 0;
-    font-size: 1.1rem;
-}
-
-.carta__puntos{
-    flex: 1;
-    border-bottom: 1px dotted var(--cafe-oscuro);
-    opacity: 0.4;
-}
-
-.carta__precio{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-
-.carta__item--destacado span:first-child::after{
-    content: "";
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    margin-left: 0.4rem;
-    border-radius: 50%;
-    background: var(--terracota);
-    vertical-align: middle;
-}
-
-.para-llevar{
-    padding: 4rem 0;
-}
-
-.seccion__etiqueta{
-    font-family: 'Montserrat',sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--terracota);
-}
-
-.seccion__titulo{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-
-.galeria{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
-    gap: 1rem;
-}
-
-.galeria__item{
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.galeria__item img{
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    transition: transform 0.4s;
-}
-
-.galeria__item:hover img{
-    transform: scale(1.05);
-}
-
-.galeria__item figcaption{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 2rem 1rem 0.8ren;
-    background: linear-gradient(transparent, rgba(52,39,31,0.85));
-    color: var(--crema);
-    font-family: 'Montserrat',sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-}
-
-.pedidos{
-    background: var(--terracota);
-    color: var(--crema);
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.pedidos .seccion__etiqueta{
-    color: var(--arena);
-}
-
-.pedidos__titulo{
-    font-family: 'Caveat', cursive;
-    font-size: clamp(2.2rem, 7vw, 3rem);
-    font-weight: 500;
-    margin: 0.5rem 0 1rem;
-}
-
-.pedidos__horario{
-    font-family: 'Montserrat',sans-serif;
-    font-weight: 700;
-    margin: 0.5rem 0 2rem;
-}
-
-.pedidos__ig{
+.hornero__texto .boton {
     margin-top: 1.5rem;
 }
 
-.pedidos__ig a{
-    color: var(--crema);
-}
-
-.boton--claro{
-    background: var(--crema);
-    color: var(--cafe-oscuro);
-}
-
-.footer{
-    background: var(--cafe-oscuro);
-    color: var(--crema);
-    padding: 2rem 0;
-}
-
-.footer__contenido{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.footer__marca{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.75;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-}
-
-.footer__frase{
-    font-family: 'Caveat',cursive;
-    font-size: 1.6rem;
-}
-
-.hornero__texto .boton{
-    margin-top: 1.5rem;
-    border: none;
-    cursor: pointer;
-}
-
-.modal{
+/* ---------- Modal de la mascota ---------- */
+.modal {
     max-width: 420px;
     width: 90%;
     margin: auto;
@@ -413,147 +269,365 @@ img{
     text-align: center;
 }
 
-.modal::backdrop{
+.modal::backdrop {
     background: rgba(52, 39, 31, 0.7);
 }
 
-.modal__imagen{
+.modal__imagen {
     width: 160px;
     margin: 0 auto 1rem;
     border-radius: 50%;
 }
 
-.modal__titulo{
-    font-family: 'Caveat',cursive;
+.modal__titulo {
+    font-family: 'Caveat', cursive;
     font-size: 2.5rem;
     font-weight: 500;
     color: var(--terracota);
 }
 
-.modal p{
+.modal p {
     margin: 0.5rem 0 1.5rem;
 }
 
-.modal .boton{
-    border: none;
-    cursor: pointer;
+@keyframes modal-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
-.header{
+@keyframes fondo-entrada {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes modal-salida {
+    to {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+}
+
+@keyframes fondo-salida {
+    to { opacity: 0; }
+}
+
+.modal[open] {
+    animation: modal-entrada 0.35s ease;
+}
+
+.modal[open]::backdrop {
+    animation: fondo-entrada 0.35s ease;
+}
+
+.modal.cerrando {
+    animation: modal-salida 0.25s ease forwards;
+}
+
+.modal.cerrando::backdrop {
+    animation: fondo-salida 0.25s ease forwards;
+}
+
+/* ---------- Carta ---------- */
+.carta {
+    background: var(--arena);
+    padding: 5rem 0;
+}
+
+.carta__hoja {
+    max-width: 950px;
+    margin: 0 auto;
+    background: var(--crema);
+    padding: 2.5rem 1.25rem;
+    border-radius: 4px;
+    outline: 1px solid rgba(52, 39, 31, 0.3);
+    outline-offset: -12px;
+    box-shadow: 0 12px 30px rgba(52, 39, 31, 0.15);
+}
+
+.carta__etiqueta {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracota);
+    margin-bottom: 3rem;
+}
+
+.carta__grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 3rem 5rem;
+}
+
+.carta__titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.carta__subtitulo {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--terracota);
+    margin-bottom: 1.5rem;
+}
+
+.carta__lista {
+    list-style: none;
+}
+
+.carta__item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    font-size: 1.1rem;
+}
+
+.carta__puntos {
+    flex: 1;
+    border-bottom: 1px dotted var(--cafe-oscuro);
+    opacity: 0.4;
+}
+
+.carta__precio {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.carta__item--destacado span:first-child::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 0.4rem;
+    border-radius: 50%;
+    background: var(--terracota);
+    vertical-align: middle;
+}
+
+.carta__pie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px dotted rgba(52, 39, 31, 0.4);
+}
+
+.carta__leyenda {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.carta__leyenda::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background: var(--terracota);
+    vertical-align: middle;
+}
+
+.carta__frase {
+    font-family: 'Caveat', cursive;
+    font-size: 1.7rem;
+    color: var(--terracota);
+}
+
+/* ---------- Para llevar (galería) ---------- */
+.para-llevar {
+    padding: 4rem 0;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.galeria__item {
     position: relative;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.menu-boton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  width: 44px;
-  height: 44px;
-  background: var(--verde-oliva);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  z-index: 30;
+.galeria__item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.4s;
 }
 
-.menu-boton span {
-  width: 20px;
-  height: 2px;
-  background: var(--crema);
-  transition: transform 0.3s, opacity 0.3s;
+.galeria__item:hover img {
+    transform: scale(1.05);
 }
 
-.menu-boton[aria-expanded = "true"] span:nth-child(1){
-    transform: translate(7px) rotate(45deg);
-}
-.menu-boton[aria-expanded = "true"] span:nth-child(2){
-    opacity: 0;
-}
-.menu-boton[aria-expanded = "true"] span:nth-child(1){
-    transform: translate(-7px) rotate(-45deg);
-}
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 75%;
-  max-width: 300px;
-  z-index: 20;
-  padding: 6rem 2rem 2rem;
-  background: var(--verde-oliva);
-  box-shadow: -10px 0 30px rgba(52, 39, 31, 0.3);
-
-  transform: translateX(100%);
-  transition: transform 0.35s ease;
-}
-
-.nav--abierta {
-  transform: translateX(0);
-}
-
-.nav--abierta a{
+.galeria__item figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem 1rem 0.8rem;
+    background: linear-gradient(transparent, rgba(52, 39, 31, 0.85));
     color: var(--crema);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
-.nav--abierta a:hover{
+/* ---------- Pedidos ---------- */
+.pedidos {
+    background: var(--terracota);
+    color: var(--crema);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.pedidos .seccion__etiqueta {
     color: var(--arena);
 }
 
-@media (min-width: 800px){
-    .hero{
+.pedidos__titulo {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    font-weight: 500;
+    margin: 0.5rem 0 1rem;
+}
+
+.pedidos__horario {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0.5rem 0 2rem;
+}
+
+.pedidos__ig {
+    margin-top: 1.5rem;
+}
+
+.pedidos__ig a {
+    color: var(--crema);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background: var(--cafe-oscuro);
+    color: var(--crema);
+    padding: 2rem 0;
+}
+
+.footer__contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__marca {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.footer__frase {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 1rem;
+}
+
+/* =========================================
+   Pantallas anchas (800px o más)
+   ========================================= */
+@media (min-width: 800px) {
+
+    /* Header: se oculta la hamburguesa y el menú vuelve a ser una fila */
+    .menu-boton {
+        display: none;
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 1.5rem;
+        position: static;
+        width: auto;
+        max-width: none;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        transform: none;
+        transition: none;
+    }
+
+    .nav a {
+        padding: 0;
+        border: none;
+        color: var(--cafe-oscuro);
+    }
+
+    .nav a:hover {
+        color: var(--terracota);
+    }
+
+    /* Hero en dos columnas */
+    .hero {
         flex-direction: row;
         align-items: center;
     }
 
-    .hero__texto{
+    .hero__texto {
         flex: 1;
     }
 
-    .hero__imagen{
+    .hero__imagen {
         width: 55%;
     }
 
-    .hornero__contenido{
+    /* Sobre nosotros en dos columnas */
+    .hornero__contenido {
         flex-direction: row;
         align-items: center;
         gap: 3rem;
     }
 
-    .hornero__imagen{
+    .hornero__imagen {
         width: 35%;
     }
 
-    .hornero__texto{
+    .hornero__texto {
         flex: 1;
     }
-    
-    .carta__hoja{
+
+    /* Carta con más aire */
+    .carta__hoja {
         padding: 4rem 4.5rem;
     }
 
-    .menu-boton{
-        display: none;
-    }
-    
-    .nav{
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-        position: static;
-        padding: 0;
-        background: none;
-        box-shadow: none;
-    }
-
-    .nav a{
-        padding: 0;
-        border: none;
+    html {
+        scroll-behavior: auto;
     }
 }
