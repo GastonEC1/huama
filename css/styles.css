@@ -37,12 +37,6 @@ img{
     height: 64px;
 }
 
-.nav{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
 .nav a{
     font-family: 'Montserrat',sans-serif;
     font-size: 0.8rem;
@@ -51,6 +45,8 @@ img{
     text-transform: uppercase;
     text-decoration: none;
     color: var(--cafe-oscuro);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(245, 235, 221, 0.2);
 }
 
 .nav a:hover {
@@ -76,7 +72,7 @@ img{
 
 .hero__titulo{
     font-family: 'Caveat',cursive;
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-weight: 500;
     line-height: 1.1;
     color: var(--terracota);
@@ -142,7 +138,7 @@ img{
 
 .hornero__titulo{
     font-family: 'Caveat', cursive;
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 7vw, 3rem);
     font-weight: 500;
     line-height: 1.1;
     margin: 0.5rem 0 1rem;
@@ -161,7 +157,7 @@ img{
     max-width: 950px;
     margin: 0 auto;
     background: var(--crema);
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.25rem;
     border-radius: 4px;
     outline: 1px solid rgba(52,39,31,0.3);
     outline-offset: -12px;
@@ -227,7 +223,7 @@ img{
 
 .carta__grilla{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 3rem 5rem;
 }
 
@@ -349,7 +345,7 @@ img{
 
 .pedidos__titulo{
     font-family: 'Caveat', cursive;
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 7vw, 3rem);
     font-weight: 500;
     margin: 0.5rem 0 1rem;
 }
@@ -443,6 +439,73 @@ img{
     cursor: pointer;
 }
 
+.header{
+    position: relative;
+}
+
+.menu-boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: var(--verde-oliva);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 30;
+}
+
+.menu-boton span {
+  width: 20px;
+  height: 2px;
+  background: var(--crema);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-boton[aria-expanded = "true"] span:nth-child(1){
+    transform: translate(7px) rotate(45deg);
+}
+.menu-boton[aria-expanded = "true"] span:nth-child(2){
+    opacity: 0;
+}
+.menu-boton[aria-expanded = "true"] span:nth-child(1){
+    transform: translate(-7px) rotate(-45deg);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  max-width: 300px;
+  z-index: 20;
+  padding: 6rem 2rem 2rem;
+  background: var(--verde-oliva);
+  box-shadow: -10px 0 30px rgba(52, 39, 31, 0.3);
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.nav--abierta {
+  transform: translateX(0);
+}
+
+.nav--abierta a{
+    color: var(--crema);
+}
+
+.nav--abierta a:hover{
+    color: var(--arena);
+}
+
 @media (min-width: 800px){
     .hero{
         flex-direction: row;
@@ -473,5 +536,24 @@ img{
     
     .carta__hoja{
         padding: 4rem 4.5rem;
+    }
+
+    .menu-boton{
+        display: none;
+    }
+    
+    .nav{
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        position: static;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    .nav a{
+        padding: 0;
+        border: none;
     }
 }
